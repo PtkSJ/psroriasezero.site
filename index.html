@@ -69,9 +69,11 @@ src="https://www.facebook.com/tr?id=1350706959700501&ev=PageView&noscript=1"
             <!-- VSL -->
             <script src="https://fast.wistia.com/embed/medias/gw8na70jad.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_gw8na70jad seo=true videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/gw8na70jad/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
 
-            <!-- Mensagem de Compartilhamento -->
+            
+
+          <!-- Mensagem de Compartilhamento -->
 <div class="compartilhamento">
-    🔥 <span>Compartilhado por <strong>3.231 pessoas</strong></span>
+     <span>Compartilhado por <strong>3.231 pessoas</strong></span>
 </div>
 
 <!-- Estilos para a Mensagem de Compartilhamento -->
@@ -98,102 +100,58 @@ src="https://www.facebook.com/tr?id=1350706959700501&ev=PageView&noscript=1"
             </div>
 
             <!-- Comentários -->
-<div class="comentarios-container">
-    <div class="comentario">
-        <img src="https://via.placeholder.com/40" alt="Usuário" class="perfil">
-        <div class="comentario-conteudo">
-            <span class="nome">João Silva</span>
-            <span class="tempo">3 horas atrás</span>
-            <p>Eu testei isso e realmente funcionou! Estou impressionado com os resultados.</p>
-            <div class="acoes">
-                <span class="curtir">Curtir</span> · <span class="responder">Responder</span>
-            </div>
-        </div>
+<div class="fb-comments">
+    <div class="fb-comments-header">
+        <span>Comentários</span>
     </div>
 
-    <div class="comentario">
-        <img src="https://via.placeholder.com/40" alt="Usuário" class="perfil">
-        <div class="comentario-conteudo">
-            <span class="nome">Mariana Souza</span>
-            <span class="tempo">2 horas atrás</span>
-            <p>Alguém mais tentou? Estou curiosa para saber se funciona mesmo!</p>
-            <div class="acoes">
-                <span class="curtir">Curtir</span> · <span class="responder">Responder</span>
-            </div>
-        </div>
+    <!-- Comentário 1 -->
+    <div class="fb-comments-comment">
+        <table>
+            <tr>
+                <td class="fb-comments-comment-img">
+                    <img src="assets/user1.jpg" alt="User">
+                </td>
+                <td>
+                    <div class="fb-comments-comment-name">
+                        <name>João Silva</name>
+                        <occupation> · 3 horas atrás</occupation>
+                    </div>
+                    <div class="fb-comments-comment-text">
+                        Eu testei isso e realmente funcionou! Estou impressionado com os resultados.
+                    </div>
+                    <div class="fb-comments-comment-actions">
+                        <like>Curtir</like> · <reply>Responder</reply> · <date>3h</date>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
 
-    <div class="comentario">
-        <img src="https://via.placeholder.com/40" alt="Usuário" class="perfil">
-        <div class="comentario-conteudo">
-            <span class="nome">Carlos Lima</span>
-            <span class="tempo">1 hora atrás</span>
-            <p>Já vi muitas pessoas comentando sobre isso. Vou experimentar!</p>
-            <div class="acoes">
-                <span class="curtir">Curtir</span> · <span class="responder">Responder</span>
-            </div>
-        </div>
+    <!-- Comentário 2 -->
+    <div class="fb-comments-comment">
+        <table>
+            <tr>
+                <td class="fb-comments-comment-img">
+                    <img src="assets/user2.jpg" alt="User">
+                </td>
+                <td>
+                    <div class="fb-comments-comment-name">
+                        <name>Mariana Souza</name>
+                        <occupation> · 2 horas atrás</occupation>
+                    </div>
+                    <div class="fb-comments-comment-text">
+                        Alguém mais tentou? Estou curiosa para saber se funciona mesmo!
+                    </div>
+                    <div class="fb-comments-comment-actions">
+                        <like>Curtir</like> · <reply>Responder</reply> · <date>2h</date>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
-</div>
 
-<!-- Estilo dos Comentários -->
-<style>
-    .comentarios-container {
-        max-width: 500px;
-        margin: 20px auto;
-        font-family: Arial, sans-serif;
-    }
-
-    .comentario {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 15px;
-    }
-
-    .perfil {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-
-    .comentario-conteudo {
-        background: #f0f2f5;
-        padding: 10px;
-        border-radius: 10px;
-        max-width: 85%;
-    }
-
-    .nome {
-        font-weight: bold;
-        font-size: 14px;
-        display: block;
-    }
-
-    .tempo {
-        font-size: 12px;
-        color: gray;
-    }
-
-    p {
-        font-size: 14px;
-        margin: 5px 0;
-    }
-
-    .acoes {
-        font-size: 12px;
-        color: #65676b;
-    }
-
-    .acoes span {
-        cursor: pointer;
-        margin-right: 10px;
-    }
-
-    .acoes span:hover {
-        text-decoration: underline;
-    }
-</style>
+  
 
             <!-- Termos de Uso e Política de Privacidade -->
             <div class="text-white mt-4"><a href="termos.html" class="text-white">Termos de Uso</a> | <a href="privacidade.html" class="text-white">Política de Privacidade</a></div>
