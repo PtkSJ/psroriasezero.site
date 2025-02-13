@@ -66,13 +66,28 @@ src="https://www.facebook.com/tr?id=1350706959700501&ev=PageView&noscript=1"
     <strong>Por motivos de exclusividade</strong>, este vídeo ficará disponível somente até <strong>15/02/2025 às 13:35</strong>.
 </p>
 
-            <!-- Mensagem de Compartilhamento -->
-<p style="text-align: center; font-size: 14px; color: #d4d4d4; font-weight: 400;">
-    🔥 Compartilhado por <strong>5.231 pessoas</strong>
-</p>
-
             <!-- VSL -->
             <script src="https://fast.wistia.com/embed/medias/gw8na70jad.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_gw8na70jad seo=true videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/gw8na70jad/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>
+
+            <!-- Mensagem de Compartilhamento -->
+<div class="compartilhamento">
+    🔥 <span>Compartilhado por <strong>3.231 pessoas</strong></span>
+</div>
+
+<!-- Estilos para a Mensagem de Compartilhamento -->
+<style>
+    .compartilhamento {
+        display: inline-block;
+        background-color: rgba(255, 0, 0, 0.2); /* Vermelho translúcido */
+        color: red;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 8px 15px;
+        border-radius: 25px;
+        border: 2px solid red;
+        text-transform: uppercase;
+    }
+</style>
 
             <!-- Botão -->
             <div id="cta1" class="mt-4 d-none">
@@ -82,39 +97,101 @@ src="https://www.facebook.com/tr?id=1350706959700501&ev=PageView&noscript=1"
               </a>
             </div>
 
-            <!-- Seção de Comentários -->
-<div class="comments mt-5">
-    <h4 style="color: white; text-align: center;">Comentários Recentes</h4>
-    <div class="comment-box">
-        <p><strong>Ana Souza:</strong> Estou usando há 3 semanas e já notei uma grande diferença! Muito obrigada por compartilhar essa solução! ❤️</p>
+            <!-- Comentários -->
+<div class="comentarios-container">
+    <div class="comentario">
+        <img src="https://via.placeholder.com/40" alt="Usuário" class="perfil">
+        <div class="comentario-conteudo">
+            <span class="nome">João Silva</span>
+            <span class="tempo">3 horas atrás</span>
+            <p>Eu testei isso e realmente funcionou! Estou impressionado com os resultados.</p>
+            <div class="acoes">
+                <span class="curtir">Curtir</span> · <span class="responder">Responder</span>
+            </div>
+        </div>
     </div>
-    <div class="comment-box">
-        <p><strong>João Mendes:</strong> Nunca imaginei que uma simples bebida poderia fazer tanta diferença! Recomendo demais. 🔥</p>
+
+    <div class="comentario">
+        <img src="https://via.placeholder.com/40" alt="Usuário" class="perfil">
+        <div class="comentario-conteudo">
+            <span class="nome">Mariana Souza</span>
+            <span class="tempo">2 horas atrás</span>
+            <p>Alguém mais tentou? Estou curiosa para saber se funciona mesmo!</p>
+            <div class="acoes">
+                <span class="curtir">Curtir</span> · <span class="responder">Responder</span>
+            </div>
+        </div>
     </div>
-    <div class="comment-box">
-        <p><strong>Carla Lima:</strong> Minha dermato disse que não tinha cura, mas essa bebida está mudando minha vida! 😍</p>
-    </div>
-    <div class="comment-box">
-        <p><strong>Marcos Silva:</strong> Funciona mesmo! Em poucos dias minha pele já começou a melhorar! Valeu! 🙌</p>
+
+    <div class="comentario">
+        <img src="https://via.placeholder.com/40" alt="Usuário" class="perfil">
+        <div class="comentario-conteudo">
+            <span class="nome">Carlos Lima</span>
+            <span class="tempo">1 hora atrás</span>
+            <p>Já vi muitas pessoas comentando sobre isso. Vou experimentar!</p>
+            <div class="acoes">
+                <span class="curtir">Curtir</span> · <span class="responder">Responder</span>
+            </div>
+        </div>
     </div>
 </div>
 
-            <!-- Estilos para os Comentários -->
+<!-- Estilo dos Comentários -->
 <style>
-    .comments {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 20px;
-        border-radius: 8px;
+    .comentarios-container {
+        max-width: 500px;
+        margin: 20px auto;
+        font-family: Arial, sans-serif;
     }
-    .comment-box {
-        background: rgba(255, 255, 255, 0.2);
+
+    .comentario {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+    }
+
+    .perfil {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+
+    .comentario-conteudo {
+        background: #f0f2f5;
         padding: 10px;
-        margin: 10px 0;
-        border-radius: 5px;
+        border-radius: 10px;
+        max-width: 85%;
     }
-    .comment-box p {
-        color: white;
-        margin: 0;
+
+    .nome {
+        font-weight: bold;
+        font-size: 14px;
+        display: block;
+    }
+
+    .tempo {
+        font-size: 12px;
+        color: gray;
+    }
+
+    p {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+
+    .acoes {
+        font-size: 12px;
+        color: #65676b;
+    }
+
+    .acoes span {
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .acoes span:hover {
+        text-decoration: underline;
     }
 </style>
 
