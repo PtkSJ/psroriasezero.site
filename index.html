@@ -14,35 +14,23 @@
 
 
 <!-- Meta Pixel Code -->
-    <script>
-      !function(f,b,e,v,n,t,s) {
-        if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1716266372287725');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1716266372287725&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
-      // Função para pegar o fbclid da URL
-      function getFbclid() {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get('fbclid');
-      }
-
-      // Captura e armazena o fbclid se presente
-      const fbclid = getFbclid();
-      if (fbclid) {
-        localStorage.setItem('fbclid', fbclid);
-      } else if (!fbclid && localStorage.getItem('fbclid')) {
-        // Se não encontrar na URL, pega do localStorage
-        fbclid = localStorage.getItem('fbclid');
-      }
-
-      // Inicializa o pixel com fbc se o fbclid estiver presente
-      fbq('init', '1716266372287725', fbclid ? { fbc: 'fb.1.' + Math.floor(Date.now() / 1000) + '.' + fbclid } : {});
-      fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1716266372287725&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
 
 
     <!-- Título da Página -->
