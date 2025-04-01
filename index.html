@@ -123,9 +123,37 @@ src="https://www.facebook.com/tr?id=1716266372287725&ev=PageView&noscript=1"
       </div>
     </header>
 
-    <script type="text/javascript">
-      setTimeout(() => {document.getElementById("cta1").classList.remove("d-none")}, 880000); // temporização da Call to Action (em milissegundos)
-    </script>
+    <div id="vid_67e8134a473a82f6aea2bccd" style="position: relative; width: 100%; padding: 56.25% 0 0;">
+    <img id="thumb_67e8134a473a82f6aea2bccd" src="https://images.converteai.net/7ac14098-cbbc-4817-a52e-f656e69b2394/players/67e8134a473a82f6aea2bccd/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail">
+    <div id="backdrop_67e8134a473a82f6aea2bccd" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div>
+</div>
+
+<button id="botao-compra" style="display: none;">Comprar Agora</button>
+
+<script type="text/javascript" id="scr_67e8134a473a82f6aea2bccd">
+    var s = document.createElement("script");
+    s.src = "https://scripts.converteai.net/7ac14098-cbbc-4817-a52e-f656e69b2394/players/67e8134a473a82f6aea2bccd/player.js";
+    s.async = true;
+    document.head.appendChild(s);
+
+    s.onload = function () {
+        var checkPlayer = setInterval(function () {
+            if (typeof window.Player67e8134a473a82f6aea2bccd !== "undefined") {
+                clearInterval(checkPlayer);
+                
+                var player = window.Player67e8134a473a82f6aea2bccd;
+                var botao = document.getElementById("botao-compra");
+                var tempoParaExibir = 880; // Tempo em segundos (14 minutos e 40 segundos)
+
+                player.on("play", function () {
+                    setTimeout(function () {
+                        botao.style.display = "block";
+                    }, tempoParaExibir * 1000); // Multiplica por 1000 para converter segundos em milissegundos
+                });
+            }
+        }, 500);
+    };
+</script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
