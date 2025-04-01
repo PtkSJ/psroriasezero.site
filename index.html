@@ -123,40 +123,77 @@ src="https://www.facebook.com/tr?id=1716266372287725&ev=PageView&noscript=1"
       </div>
     </header>
 
-    <div id="vid_67e8134a473a82f6aea2bccd" style="position: relative; width: 100%; padding: 56.25% 0 0; display: none;">
-    <img id="thumb_67e8134a473a82f6aea2bccd" src="https://images.converteai.net/7ac14098-cbbc-4817-a52e-f656e69b2394/players/67e8134a473a82f6aea2bccd/thumbnail.jpg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;" alt="thumbnail">
-    <div id="backdrop_67e8134a473a82f6aea2bccd" style=" -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); position: absolute; top: 0; height: 100%; width: 100%; "></div>
-</div>
+    <style>
+  .esconder {
+    display: none;
+  }
+</style>
 
-<button id="botao-compra" style="display: none;">Comprar Agora</button>
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() {
+    /* ALTERE O VALOR 880000 PARA OS MILISSEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+    var SECONDS_TO_DISPLAY = 880000 / 1000; // 880000 milissegundos = 880 segundos
+    var CLASS_TO_DISPLAY = ".esconder";
+    
+    /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
+    var EXPIRATION_DAYS = 14;
+    var alreadyDisplayedKey = "alreadyElsDisplayed" + SECONDS_TO_DISPLAY;
+    var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+    var elsDisplayed = false;
+    var attempts = 0;
 
-<script type="text/javascript" id="scr_67e8134a473a82f6aea2bccd">
-    var s = document.createElement("script");
-    s.src = "https://scripts.converteai.net/7ac14098-cbbc-4817-a52e-f656e69b2394/players/67e8134a473a82f6aea2bccd/player.js";
-    s.async = true;
-    document.head.appendChild(s);
+    class StorageHandler {
+      static expiryTime = EXPIRATION_DAYS * 86400000;
 
-    s.onload = function () {
-        var checkPlayer = setInterval(function () {
-            if (typeof window.Player67e8134a473a82f6aea2bccd !== "undefined") {
-                clearInterval(checkPlayer);
-                
-                var player = window.Player67e8134a473a82f6aea2bccd;
-                var botao = document.getElementById("botao-compra");
-                var videoDiv = document.getElementById("vid_67e8134a473a82f6aea2bccd");
+      static set(key, value) {
+        localStorage.setItem(
+          key,
+          JSON.stringify({ value, expiry: Date.now() + this.expiryTime })
+        );
+      }
 
-                // Exibir o player Vturb após o carregamento
-                videoDiv.style.display = "block";
+      static get(key) {
+        var item = localStorage.getItem(key);
+        if (!item) return null;
 
-                player.on("play", function () {
-                    setTimeout(function () {
-                        botao.style.display = "block";
-                    }, 880000); // 880.000 milissegundos = 14 minutos e 40 segundos
-                });
-            }
-        }, 500);
+        var { value, expiry } = JSON.parse(item);
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key);
+          return null;
+        }
+        return value;
+      }
+    }
+
+    var alreadyElsDisplayed = StorageHandler.get(alreadyDisplayedKey);
+
+    var showHiddenElements = function () {
+      elsDisplayed = true;
+      elsHidden.forEach((e) => e.style.display = "block");
+      StorageHandler.set(alreadyDisplayedKey, true);
     };
+
+    var startWatchVideoProgress = function () {
+      if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+        if (attempts >= 10) return;
+        attempts++;
+        return setTimeout(startWatchVideoProgress, 1000);
+      }
+      smartplayer.instances[0].on('timeupdate', () => {
+        if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+        if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+        showHiddenElements();
+      });
+    };
+
+    if (alreadyElsDisplayed) {
+      setTimeout(showHiddenElements, 100);
+    } else {
+      startWatchVideoProgress();
+    }
+  });
 </script>
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
